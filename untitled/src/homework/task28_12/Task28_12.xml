@@ -1,0 +1,14 @@
+<?xml version = "1.0" ?>
+<!DOCTYPE pointList>
+<!--Сделайте XML на основе приведённого примера, у которого тег point будет иметь параметр unit -
+единицы измерения. Возможные варианты значения - cm, mm, px.-->
+<pointList>
+    <point unit="cm">
+        <x>2</x>
+        <y>3</y>
+    </point>
+    <point unit="mm">
+        <x>9</x>
+        <y>3</y>
+    </point>
+</pointList>

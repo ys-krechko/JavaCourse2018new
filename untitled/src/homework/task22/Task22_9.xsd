@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>Сделайте XML на основе приведённого примера, у которого тег point будет иметь параметр unit -
+            единицы измерения. Возможные варианты значения - cm, mm, px.
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:simpleType name="unitType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cm"/>
+            <xs:enumeration value="mm"/>
+            <xs:enumeration value="px"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="point">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="x" type="xs:integer"/>
+                <xs:element name="y" type="xs:integer"/>
+            </xs:sequence>
+            <xs:attribute name="unit" type="unitType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="pointList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="point"/>
+                <xs:element ref="point"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
